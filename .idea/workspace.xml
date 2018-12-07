@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="398b1d41-8f99-4712-a015-0e7204632bf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/delaunay/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/DCEL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/DCEL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/DelaunayTriangulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/delaunay/DelaunayTriangulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/HalfEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/HalfEdge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/TriangleFaceTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/TriangleFaceTreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/tufts/compgeo/dcel/Ui.java" afterDir="false" />
-    </list>
+    <list default="true" id="398b1d41-8f99-4712-a015-0e7204632bf1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -87,8 +77,8 @@
               <caret line="66" column="38" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6543#6544#0" expanded="true" />
-                <element signature="e#6599#6600#0" expanded="true" />
+                <element signature="e#6523#6524#0" expanded="true" />
+                <element signature="e#6579#6580#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -409,16 +399,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544137428478</updated>
-      <workItem from="1544137434436" duration="22132000" />
+      <workItem from="1544137434436" duration="22390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22132000" />
+    <option name="totallyTimeSpent" value="22390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="UI Designer" />
@@ -735,8 +724,8 @@
           <caret line="66" column="38" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6543#6544#0" expanded="true" />
-            <element signature="e#6599#6600#0" expanded="true" />
+            <element signature="e#6523#6524#0" expanded="true" />
+            <element signature="e#6579#6580#0" expanded="true" />
           </folding>
         </state>
       </provider>

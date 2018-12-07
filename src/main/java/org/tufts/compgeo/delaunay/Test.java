@@ -12,12 +12,12 @@ public class Test {
         Random random = new Random();
         Long start = Instant.now().toEpochMilli();
         Long last = start;
-        for (int i = 0; i < 100_000_000; i++) {
+        for (int i = 0; i < 40_000_000; i++) {
             delaunayTriangulation.insertVertex(random.nextFloat()*max, random.nextFloat() * max)
                     .setName(Integer.toString(i));
-            if (i%50_000 == 0) {
+            if (i%10_000 == 0) {
                 Long now = Instant.now().toEpochMilli();
-                System.out.printf("%d, %d, %d, list\n", i, now - last, now - start);
+                System.out.printf("%d, %d, %d, List\n", i, now - last, now - start);
                 last = now;
             }
         }
