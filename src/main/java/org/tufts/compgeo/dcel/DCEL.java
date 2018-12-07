@@ -1,18 +1,17 @@
 package org.tufts.compgeo.dcel;
 
+import java.util.ArrayDeque;
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
 
 public class DCEL {
-    private final List<Face> faces;
-    private final List<HalfEdge> halfEdges;
-    private final List<Vertex> vertices;
+    private final Collection<Face> faces;
+    private final Collection<HalfEdge> halfEdges;
+    private final Collection<Vertex> vertices;
 
     public DCEL() {
-        faces = new LinkedList<>();
-        halfEdges = new LinkedList<>();
-        vertices = new LinkedList<>();
+        faces = new ArrayDeque<>(1_000_000);
+        halfEdges = new ArrayDeque<>(1_000_000);
+        vertices = new ArrayDeque<>(1_000_000);
     }
 
     public Collection<Face> getFaces() {
