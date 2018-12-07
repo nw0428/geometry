@@ -1,5 +1,7 @@
 package org.tufts.compgeo.dcel;
 
+import org.tufts.compgeo.delaunay.DelaunayTriangulation;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Dimension;

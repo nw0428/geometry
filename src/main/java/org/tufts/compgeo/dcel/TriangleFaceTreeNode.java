@@ -6,6 +6,7 @@ public class TriangleFaceTreeNode {
 
     private final Face face;
     private final TriangleFaceTreeNode[] children;
+    private static int total = 0;
     Vertex a;
     Vertex b;
     Vertex c;
@@ -44,13 +45,16 @@ public class TriangleFaceTreeNode {
         return !(one_neg && one_pos);
     }
 
-    public TriangleFaceTreeNode search(Vertex vertex) {
-        int i;
-        for (i = 0; i < 3; i++) {
+    public TriangleFaceTreeNode search(Vertex vertex, int depth) {
+        if (depth == 0) {
+            total++;
+        }
+        for (int i = 0; i < 3; i++) {
             if (null != children[i] && children[i].contains(vertex)) {
-                return children[i].search(vertex);
+                return children[i].search(vertex, depth + 1);
             }
         }
+//        if (total % 500 == 0) System.out.printf("%d, %d\n", total, depth);
         return this;
     }
 }

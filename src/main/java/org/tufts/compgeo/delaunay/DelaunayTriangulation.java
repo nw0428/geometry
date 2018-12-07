@@ -1,4 +1,11 @@
-package org.tufts.compgeo.dcel;
+package org.tufts.compgeo.delaunay;
+
+import org.tufts.compgeo.dcel.DCEL;
+import org.tufts.compgeo.dcel.Face;
+import org.tufts.compgeo.dcel.HalfEdge;
+import org.tufts.compgeo.dcel.TriangleFaceTreeNode;
+import org.tufts.compgeo.dcel.Ui;
+import org.tufts.compgeo.dcel.Vertex;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -25,7 +32,6 @@ public class DelaunayTriangulation {
 
         setup(a, b, c, face);
         faceTree = new TriangleFaceTreeNode(face);
-        dcel.sanity();
     }
 
     private void setup(Vertex a, Vertex b, Vertex c, Face face) {
@@ -56,13 +62,13 @@ public class DelaunayTriangulation {
     public Vertex insertVertex(float xcoord, float ycoord) {
         Vertex vertex = new Vertex(xcoord, ycoord, dcel);
 
-        TriangleFaceTreeNode container = faceTree.search(vertex);
+        TriangleFaceTreeNode container = faceTree.search(vertex, 0);
 
         // Create new faces and remove irrelevant face from dcel
         Face nab = new Face(dcel);
         Face nbc = new Face(dcel);
         Face nca = new Face(dcel);
-        dcel.getFaces().remove(container.getFace());
+        dcel.removeFace(container.getFace());
 
         TriangleFaceTreeNode[] children = container.getChildren();
         children[0] = new TriangleFaceTreeNode(nab);
@@ -105,8 +111,6 @@ public class DelaunayTriangulation {
         ca.setNext(an);
         an.setNext(nc);
 
-        dcel.sanity();
-
         Vertex a = ab.getSource();
         Vertex x = a;
         Vertex y;
@@ -127,14 +131,15 @@ public class DelaunayTriangulation {
                     TriangleFaceTreeNode tzyn = new TriangleFaceTreeNode(zyn);
 
                     TriangleFaceTreeNode yxnode = yx.getFace().getOther();
-                    TriangleFaceTreeNode xynode = yx.getTwin().getFace().getOther();
+                    HalfEdge xy = yx.getTwin();
+                    TriangleFaceTreeNode xynode = xy.getFace().getOther();
                     yxnode.getChildren()[0] = tnxz;
                     yxnode.getChildren()[1] = tzyn;
                     xynode.getChildren()[0] = tnxz;
                     xynode.getChildren()[1] = tzyn;
 
-                    dcel.getFaces().remove(yxnode.getFace());
-                    dcel.getFaces().remove(xynode.getFace());
+                    dcel.removeFace(yxnode.getFace());
+                    dcel.removeFace(xynode.getFace());
 
                     HalfEdge zy = z.getEdgeForNeighbor(y);
                     HalfEdge xz = x.getEdgeForNeighbor(z);
@@ -154,6 +159,12 @@ public class DelaunayTriangulation {
                     yn.setFace(zyn);
                     nz.setNext(zy);
                     zy.setNext(yn);
+
+                    dcel.removeEdge(xy);
+                    dcel.removeEdge(yx);
+
+                    yx.clear();
+                    xy.clear();
                     progress = false;
                 }
             }

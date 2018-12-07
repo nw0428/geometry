@@ -69,4 +69,12 @@ public class HalfEdge {
                 "source=" + source +
                 '}';
     }
+
+    public void clear() {
+        source = null;
+        next = null;
+        twin = null;
+        prev = null;
+        face = null;
+    }
 }

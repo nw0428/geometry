@@ -1,28 +1,29 @@
 package org.tufts.compgeo.dcel;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 public class DCEL {
-    private final Set<Face> faces;
-    private final Set<HalfEdge> halfEdges;
-    private final Set<Vertex> vertices;
+    private final List<Face> faces;
+    private final List<HalfEdge> halfEdges;
+    private final List<Vertex> vertices;
 
     public DCEL() {
-        faces = new HashSet<>();
-        halfEdges = new HashSet<>();
-        vertices = new HashSet<>();
+        faces = new LinkedList<>();
+        halfEdges = new LinkedList<>();
+        vertices = new LinkedList<>();
     }
 
-    public Set<Face> getFaces() {
+    public Collection<Face> getFaces() {
         return faces;
     }
 
-    public Set<HalfEdge> getHalfEdges() {
+    public Collection<HalfEdge> getHalfEdges() {
         return halfEdges;
     }
 
-    public Set<Vertex> getVertices() {
+    public Collection<Vertex> getVertices() {
         return vertices;
     }
 
@@ -35,5 +36,13 @@ public class DCEL {
                 throw new IllegalStateException("Bad bad bad");
             }
         }
+    }
+
+    public void removeFace(Face face) {
+//        faces.remove(face);
+    }
+
+    public void removeEdge(HalfEdge edge) {
+//        halfEdges.remove(edge);
     }
 }
